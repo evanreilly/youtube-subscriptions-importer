@@ -58,8 +58,6 @@
                     addSubscription($('#subscription-id').val());
                     console.log($('#subscription-id').val());
                 });
-
-
             });
         }
 
@@ -119,6 +117,35 @@
                 }
             });
         }
+
+
+        $.get("subscription_manager.xml", function(data) {
+            //var xmlDoc = data.responseXML;
+            var regex = /(UC)[A-Za-z0-9\-_]+/g;
+            var x = $(data);
+            var outline = x.find("outline[xmlUrl]")
+            $(outline).each(function(){
+              $(this).attr("xmlUrl");
+              var url = $(this).attr("xmlUrl")+"";
+              console.log(url.match(regex)[0]);
+              //console.log(myRe.exec(url));
+            })
+            //console.log(outline);
+            /*console.log(x);
+            x = data.documentElement.$("<outline>");
+            console.log(x);
+            var txt = "";
+            for (i = 0; i < x.length; i++) {
+                if (x[i].nodeType == 1) {
+                    txt += x[i].nodeName + "<br>";
+                }
+            }
+            //document.getElementById("demo").innerHTML = txt;
+            */
+            //$("#demo").html(txt);
+            //alert(data);
+        });
+
     </script>
 
     <button id="sign-in-or-out-button" style="margin-left: 25px">Sign In/Authorize</button>
@@ -132,7 +159,15 @@
     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
     <button id="add-subscription" style="margin-left: 25px">Add Subscription</button>
-    <input id = "subscription-id"type="text" name="" value="">
+    <input id="subscription-id" type="text" name="" value="">
+    <br>
+    <p id="demo">example text</p>
+
+
+
+
+
+
 </body>
 
 </html>
