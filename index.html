@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
@@ -54,8 +55,8 @@
                     console.log("pressed button");
                 });
                 $('#add-subscription').click(function() {
-                    addSubscription('UCnUYZLuoy1rq1aVMwx4aTzw');
-                    console.log("pressed button");
+                    addSubscription($('#subscription-id').val());
+                    console.log($('#subscription-id').val());
                 });
 
 
@@ -146,7 +147,7 @@
             });
         }
     </script>
-    <button id="add-subscription" style="margin-left: 55px">Add youtube channel</button>
+
     <button id="sign-in-or-out-button" style="margin-left: 25px">Sign In/Authorize</button>
     <button id="revoke-access-button" style="display: none; margin-left: 25px">Revoke access</button>
 
@@ -155,21 +156,10 @@
     <hr>
 
 
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-
-
-
-
-
-
-
-
-
-
+    <button id="add-subscription" style="margin-left: 25px">Add Subscription</button>
+    <input id = "subscription-id"type="text" name="" value="">
 </body>
 
 </html>
