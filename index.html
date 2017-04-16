@@ -99,33 +99,6 @@
             setSigninStatus();
         }
 
-        /*function addSubscription() {
-            // Replace this channel ID with the channel ID you want to subscribe to
-            //google chrome developer's channel
-            var channelId = 'UCnUYZLuoy1rq1aVMwx4aTzw';
-
-            var resource = {
-                snippet: {
-                    resourceId: {
-                        kind: 'youtube#channel',
-                        channelId: channelId
-                    }
-                }
-            };
-
-
-            try {
-
-                var response = gapi.client.youtube.Subscriptions.insert(resource, 'snippet');
-                console.log(response);
-            } catch (e) {
-                if (e.message.match('subscriptionDuplicate')) {
-                    console.log('Cannot subscribe; already subscribed to channel: ' + channelId);
-                } else {
-                    console.log('Error adding subscription: ' + e.message);
-                }
-            }
-        }*/
         // Subscribes the authorized user to the channel specified
         function addSubscription(channelSub) {
             var resource = {
@@ -142,7 +115,7 @@
             request.execute(function(response) {
                 var result = response.result;
                 if (result) {
-                    // alert("Subscription completed");
+                    console.log("subscription completed");
                 }
             });
         }
