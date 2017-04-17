@@ -5,7 +5,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
     <meta charset="utf-8">
     <title></title>
 </head>
@@ -28,43 +27,59 @@
     <p> </p>
     <input id="input-file" type="file" name="browsename[]">
     <button id="import" style="margin-left: 25px">Import!</button>
-    <p id="display"><p>
-    <script>
-        console.log("script")
-        $('#import').click(function() {
+    <p id="display">
+        <p>
+            <script>
+                console.log("script")
+                $('#import').click(function() {
 
-            //have to use old school school selector, can't figure out the jquery...
-            var selectedFile = document.getElementById('input-file').files[0];
-            handleXML(selectedFile);
+                    //have to use old school school selector, can't figure out the jquery...
+                    var selectedFile = document.getElementById('input-file').files[0];
+                    handleXML(selectedFile);
 
-            console.log(selectedFile);
-            //console.log("pressed");
-        });
-
-        function handleXML(file) {
-            $.get(window.URL.createObjectURL(file), function(data) {
-                console.log(window.URL.createObjectURL(file));
-                //var xmlDoc = data.responseXML;
-                var regex = /(UC)[A-Za-z0-9\-_]+/g;
-                var x = $(data);
-                console.log(x);
-                var outline = x.find("outline[xmlUrl]")
-                console.log(outline);
-                var count = 0;
-                var txt = "";
-                $(outline).each(function() {
-                    count += 1;
-                    var title = $(this).attr("title");
-                    txt+= "Subscribed to: " + title +"<br>";
-                    var id = $(this).attr("xmlUrl") + "";
-                    //addSubscription(id.match(regex)[0]);
-                    //id.match(regex)[0];
-                    console.log(id.match(regex)[0]);
+                    console.log(selectedFile);
+                    //console.log("pressed");
                 });
-                  $('#display').html(txt);
-            });
-        }
-    </script>
+
+                function handleXML(file) {
+                    $.get(window.URL.createObjectURL(file), function(data) {
+                        console.log(window.URL.createObjectURL(file));
+                        //var xmlDoc = data.responseXML;
+                        var regex = /(UC)[A-Za-z0-9\-_]+/g;
+                        var x = $(data);
+                        console.log(x);
+                        var outline = x.find("outline[xmlUrl]")
+                        console.log(outline);
+                        var count = 0;
+                        var txt = "";
+                        $(outline).each(function() {
+                            count += 1;
+                            var title = $(this).attr("title");
+                            txt += "Subscribed to: " + title + "<br>";
+                            var id = $(this).attr("xmlUrl") + "";
+                            addSubscription(id.match(regex)[0]);
+                            //id.match(regex)[0];
+                            console.log(id.match(regex)[0]);
+                        });
+                        $('#display').html(txt);
+                    });
+                }
+            </script>
+            <script>
+                (function(i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function() {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-97396322-1', 'auto');
+                ga('send', 'pageview');
+            </script>
 </body>
 
 </html>
