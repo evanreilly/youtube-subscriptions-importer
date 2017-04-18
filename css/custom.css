@@ -1,0 +1,69 @@
+.button {
+    background-color:#cc181e; /* Youtube UI red:#cc181e subscribe red: #e62117*/
+    border: none;
+    color: white;
+    padding: 8px 13px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+html,body{
+  height: 100%;
+  padding:0;
+  margin:0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#dropbox{
+  position:relative
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  /*border: 3px solid green;*/
+  /*border is for debugging*/
+}
+#import{
+  margin:0 0 0 -200px;
+  vertical-align: middle;
+  position:absolute;
+  display:block;
+  top: 5%;
+  left: 50%;
+
+}
+
+.button:focus, .button:hover{
+  background-color:#e62117;
+  cursor: pointer;
+}
+
+#display{
+  text-align:center;
+  margin: 100px 0 0 0
+}
+
+#dropbox-label{
+  text-align:center;
+  font-weight:70em;
+  font-size: 5em;
+  color:#575757;
+  margin:150px 0 0 0;
+}
+
+#input-file {
+    color: white;
+    background-color:#575757;
+    margin:0 0 0 -100px;
+    vertical-align: middle;
+    position:absolute;
+    display:block;
+    top: 5%;
+    left: 50%;
+    padding: 5px 13px;
+}
+
+#input-file:focus, #input-file:hover {
+    background-color:#878787;
+    cursor: pointer;
+}

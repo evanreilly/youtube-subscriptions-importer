@@ -33,18 +33,22 @@ function initClient() {
 
         // Call handleAuthClick function when user clicks on
         //      "Sign In/Authorize" button.
-        $('#sign-in-or-out-button').click(function() {
+        /*$('#sign-in-or-out-button').click(function() {
             handleAuthClick();
         });
         $('#revoke-access-button').click(function() {
             revokeAccess();
             console.log("pressed button");
+        });*/
+        $('#revoke-access-button').click(function() {
+            revokeAccess();
+            console.log("pressed button");
         });
-        $('#add-subscription').click(function() {
-            addSubscription($('#subscription-id').val());
-            console.log($('#subscription-id').val());
-        });
+
     });
+}
+function checkIfSignedIn(){
+  return GoogleAuth.isSignedIn.get();
 }
 
 function handleAuthClick() {
