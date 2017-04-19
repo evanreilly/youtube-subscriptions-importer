@@ -8,6 +8,7 @@ youtube channels with the simple click of a button!  Or just simply import them 
 
 # Instructions
 [Video instructions](https://www.youtube.com/watch?v=CoBeJJA6QUk)
+
 You will need to go to:
 
 [Youtube Subscription Manager](https://www.youtube.com/subscription_manager)
