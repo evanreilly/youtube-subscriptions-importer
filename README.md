@@ -11,7 +11,7 @@ youtube channels with the simple click of a button!  Or just simply import them 
 
 You will need to go to:
 
-[Youtube Subscription Manager](https://www.youtube.com/subscription_manager)
+[Youtube Subscription Manager](http://evanreilly.com/youtube-subscriptions-importer)
 
 Next you will need to export your youtube subscriptions for RSS feeds.
 
