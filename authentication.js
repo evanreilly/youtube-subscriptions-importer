@@ -17,7 +17,7 @@ function initClient() {
     // Get API key and client ID from API Console.
     // 'scope' field specifies space-delimited list of access scopes.
     gapi.client.init({
-        'apiKey': 'AIzaSyDYBDUTV4sutxPxq3j0-FpxeajCvMJDJSU',
+        'apiKey': 'AIzaSyB4iNfzGiZJaorOM6KFACWX3T2q0AlExPU',
         'discoveryDocs': [discoveryUrl],
         'clientId': '1041512274445-upcpmoa8f37d5eping3t3cm7gl79ic9p.apps.googleusercontent.com',
         'scope': SCOPE
